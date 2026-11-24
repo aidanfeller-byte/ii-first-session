@@ -1257,7 +1257,7 @@ function paintVerdict(quick){
   $('vBody').innerHTML = `
     <div class="k-kick rv" style="${D(0)}"><span>02</span><span>Your reading</span></div>
     ${head}
-    <p class="k-lede rv" style="margin-top:14px;${D(.25)}">With ${money(r.amt)} ${r.n === 1 ? 'in ' + r.S[0].tk : 'split evenly'},${r.n === 1 ? 'it' : who.toLowerCase().replace('your', 'your')} returned ${pct(r.youPct)} over the ${window_(r.w)}. The same ${money(r.amt)} in the S&amp;P 500 returned ${pct(r.spPct)}${r.level ? '.' : `, a <b class="${tone(r.diff)}" style="font-weight:600">${g} pp</b> gap.`}</p>
+    <p class="k-lede rv" style="margin-top:14px;${D(.25)}">With ${money(r.amt)} ${r.n === 1 ? 'in ' + r.S[0].tk : 'split evenly'}, ${r.n === 1 ? 'it' : who.toLowerCase().replace('your', 'your')} returned ${pct(r.youPct)} over the ${window_(r.w)}. The same ${money(r.amt)} in the S&amp;P 500 returned ${pct(r.spPct)}${r.level ? '.' : `, a <b class="${tone(r.diff)}" style="font-weight:600">${g} pp</b> gap.`}</p>
     <div class="k-chart rv" style="${D(.35)}">${chartK(r)}</div>
     <div class="win kw" role="group" aria-label="Time frame" style="margin-top:6px">${[1, 3, 5].map(w => { const x = reading(w).gapPP; return `<button aria-pressed="${w === WIN}" aria-label="${plural(w, 'year')}, ${ppf(x)} against the S&P 500" onclick="setWinVerdict(${w})">${w}Y<small class="${Math.abs(x) < 1.5 ? '' : tone(x)}">${smoney(reading(w).diff)}</small></button>`; }).join('')}</div>
     <div class="amt rv" role="group" aria-label="Amount invested" style="${D(.4)}"><span>Invested</span>${AMOUNTS.map(a => `<button aria-pressed="${a === TOTAL}" onclick="setAmt(${a})">${a / 1000}k</button>`).join('')}</div>
